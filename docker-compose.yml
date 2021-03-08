@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  proxy:
+    build: .
+    ports:
+      - '80:80'
+  
+  backend1:
+    image: httpd
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/
+  backend2:
+    image: httpd
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/
+  backend3:
+    image: httpd
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/
+      
